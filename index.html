@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Loop - Chậu Cây Tái Chế</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f8f4;
+    color:#333;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+    display:block;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1600&q=80');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* SECTION */
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:60px;
+    font-size:40px;
+    color:#2e7d32;
+}
+
+/* SLIDER */
+
+.slider{
+    width:100%;
+    height:600px;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    font-size:25px;
+    cursor:pointer;
+    background:rgba(255,255,255,.8);
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.dots{
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+}
+
+.dot{
+    width:15px;
+    height:15px;
+    display:inline-block;
+    margin:0 5px;
+    border-radius:50%;
+    background:white;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#2e7d32;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin:15px 0;
+}
+
+/* COUNTER */
+
+.counter{
+    background:#2e7d32;
+    color:white;
+}
+
+.counter-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+    gap:20px;
+}
+
+.number{
+    font-size:60px;
+    font-weight:bold;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    border-radius:25px;
+}
+
+/* FOOTER */
+
+
+.footer-modern{
+    background:#111;
+    color:white;
+    padding:70px 10% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.footer-column h2{
+    color:#66bb6a;
+    margin-bottom:15px;
+}
+
+.footer-column h4{
+    margin-bottom:15px;
+    color:#66bb6a;
+}
+
+.footer-column p{
+    line-height:1.8;
+}
+
+.footer-column a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:#66bb6a;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:50px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    font-size:14px;
+    color:#bbb;
+}
+/* map */
+.map-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    z-index:9999;
+}
+
+.map-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:900px;
+    height:600px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.map-content iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+.close-map{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:35px;
+    cursor:pointer;
+    z-index:1;
+    color:#333;
+}
+
+
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.counter-grid{
+    grid-template-columns:1fr;
+}
+
+.slider{
+    height:300px;
+}
+
+}
+#features{
+    background:#f8faf4;
+    padding:80px 5%;
+}
+
+.features-row{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.feature-item{
+    width:220px;
+    text-align:center;
+}
+
+.feature-icon{
+    width:100px;
+    height:100px;
+    margin:0 auto 15px;
+    border:2px solid #8bc34a;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.feature-icon img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
+
+.feature-item h3{
+    color:#1b5e20;
+    font-size:22px;
+    font-weight:600;
+    line-height:1.4;
+}
+
+.feature-divider{
+    width:1px;
+    height:150px;
+    background:#d9d9d9;
+    margin:0 20px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#top" class="logo">
+    <img src="../images/logogreenloop.jpg" alt="Green Loop Logo">
+</a>
+
+    <ul>
+        <li><a href="#slider">Sản phẩm</a></li>
+        <li><a href="#features">Ưu điểm</a></li>
+        <li><a href="#gallery">Thư viện</a></li>
+        <li><a href="#footer">About Us</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Chậu Cây Tái Chế Green Loop</h1>
+
+        <p>
+            Biến rác thải thành vẻ đẹp xanh.
+            Một lựa chọn nhỏ cho ngôi nhà,
+            một thay đổi lớn cho môi trường.
+        </p>
+
+        <button class="btn">
+            Khám Phá Ngay
+        </button>
+    </div>
+</section>
+
+<section id="slider">
+
+    <h2 class="title">Hình Ảnh Sản Phẩm</h2>
+
+    <div class="slider">
+
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=1400&q=80">
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80">
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80">
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="features">
+
+    <h2 class="title">Vì Sao Chọn Green Loop?</h2>
+
+    <div class="features-row">
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="../images/leaf.png" alt="Leaf">
+            </div>
+            <h3>Sản phẩm<br>thân thiện</h3>
+        </div>
+
+        <div class="feature-divider"></div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="../images/recycle.png" alt="Recycle">
+            </div>
+            <h3>Bảo vệ<br>môi trường</h3>
+        </div>
+
+        <div class="feature-divider"></div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="../images/sustainability.png" alt="Sustainability">
+            </div>
+            <h3>Bền vững<br>cho tương lai</h3>
+        </div>
+
+        <div class="feature-divider"></div>
+
+        <div class="feature-item">
+            <div class="feature-icon">
+                <img src="../images/earth.png" alt="Earth">
+            </div>
+            <h3>Vì một hành tinh<br>xanh</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="counter">
+
+    <div class="counter-grid">
+
+        <div>
+            <div class="number">5000+</div>
+            <p>Chậu đã bán</p>
+        </div>
+
+        <div>
+            <div class="number">2.1T</div>
+            <p>Nhựa tái chế</p>
+        </div>
+
+        <div>
+            <div class="number">98%</div>
+            <p>Khách hàng hài lòng</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="gallery">
+
+    <h2 class="title">Thư Viện Ảnh</h2>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80">
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="cta">
+
+        <h2 style="font-size:40px;margin-bottom:20px">
+            Chung Tay Vì Một Hành Tinh Xanh 🌍
+        </h2>
+
+        <p style="margin-bottom:30px">
+            Mỗi Green Loop được tạo ra là một bước tiến nhỏ
+            trong hành trình giảm rác thải nhựa.
+        </p>
+
+       <a href="https://www.facebook.com/profile.php?id=61590244239722" class="btn">
+    Đặt Hàng Ngay
+</a>
+
+    </div>
+
+</section>
+
+
+<footer id="footer" class="footer-modern">
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h2>Green Loop</h2>
+            <p>
+                Biến rác thải thành vẻ đẹp xanh.
+                Chúng tôi mang đến những chậu cây tái chế thân thiện
+                với môi trường và phong cách sống bền vững.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>ĐỊA CHỈ</h4>
+            <p>
+                TP. Cần thở, Việt Nam<br>
+                Green Loop Workshop<br>
+                <a href="#" onclick="openMap(); return false;">
+    XEM BẢN ĐỒ →
+</a>
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>LIÊN HỆ</h4>
+            <p>
+                Email:
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greenloop66@gmail.com">
+    greenloop66@gmail.com
+</a>
+
+                Hotline:
+                <a href="tel:090 720 75 61">
+                    090 720 75 61
+                </a><br>
+
+                Facebook:
+                <a href="https://www.facebook.com/profile.php?id=61590244239722">
+                    Green Loop
+                </a>
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>KHÁM PHÁ</h4>
+
+            <p>
+                <a href="#slider">Sản phẩm →</a><br>
+                <a href="#features">Ưu điểm →</a><br>
+                <a href="#gallery">Thư viện →</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Green Loop - Chậu Cây Tái Chế. Vì một hành tinh xanh hơn 🌱
+    </div>
+
+</footer>
+
+<div id="mapModal" class="map-modal">
+
+    <div class="map-content">
+
+        <span class="close-map" onclick="closeMap()">&times;</span>
+
+        <iframe
+            src="https://www.google.com/maps?q=10.047038449428412, 105.78667939641484&z=15&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</div>
+
+<script>
+
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+const next=document.querySelector('.next');
+const prev=document.querySelector('.prev');
+
+let current=0;
+
+function showSlide(index){
+
+slides.forEach(slide=>{
+slide.classList.remove('active');
+});
+
+dots.forEach(dot=>{
+dot.classList.remove('active');
+});
+
+slides[index].classList.add('active');
+dots[index].classList.add('active');
+
+}
+function openMap(){
+    document.getElementById('mapModal').style.display='block';
+}
+
+function closeMap(){
+    document.getElementById('mapModal').style.display='none';
+}
+
+window.addEventListener('click',function(e){
+    const modal=document.getElementById('mapModal');
+
+    if(e.target===modal){
+        modal.style.display='none';
+    }
+});
+
+function nextSlide(){
+
+current++;
+
+if(current>=slides.length){
+current=0;
+}
+
+showSlide(current);
+
+}
+
+function prevSlide(){
+
+current--;
+
+if(current<0){
+current=slides.length-1;
+}
+
+showSlide(current);
+
+}
+
+next.addEventListener('click',nextSlide);
+prev.addEventListener('click',prevSlide);
+
+dots.forEach((dot,index)=>{
+
+dot.addEventListener('click',()=>{
+
+current=index;
+showSlide(current);
+
+});
+
+});
+
+setInterval(nextSlide,4000);
+
+</script>
+
+</body>
+</html>
