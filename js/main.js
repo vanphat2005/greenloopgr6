@@ -2,22 +2,22 @@ const steps = [
     {
         title: "Bước 1: Cho đất vào chậu",
         description: "Có thể cho phân bón và đất vào chậu cây trước.",
-        video: "/videos/buoc1.mp4"
+        video: "videos/buoc1.mp4"
     },
     {
         title: "Bước 2: Gieo Hạt Ươm Mầm",
         description: "Gieo hạt xuống sau đó lắp đất lại.",
-        video: "/videos/buoc2.mp4"
+        video: "videos/buoc2.mp4"
     },
     {
         title: "Bước 3: Tưới Cây Chăm Sóc",
         description: "Tưới nước vào chậu, chăm sóc tới khi cây lên mầm.",
-        video: "/videos/buoc3.mp4"
+        video: "videos/buoc3.mp4"
     },
     {
         title: "Bước 4: Trồng Chậu Xuống Đất",
         description: "Trồng cả chậu lẫn cây mầm xuống đất.",
-        video: "/videos/buoc4.mp4"
+        video: "videos/buoc4.mp4"
     }
 ];
 
