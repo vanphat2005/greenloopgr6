@@ -69,7 +69,7 @@ nav a{
     height:100vh;
     background:
     linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1600&q=80');
+    url('images/banner.png');
 
     background-size:cover;
     background-position:center;
@@ -425,6 +425,83 @@ section{
     background:#d9d9d9;
     margin:0 20px;
 }
+.news{
+    padding:80px 8%;
+    background:#f8faf4;
+}
+
+.news-title{
+    text-align:center;
+    font-size:36px;
+    color:#2e7d32;
+    margin-bottom:40px;
+}
+
+.news-grid{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.news-card{
+    width:280px;
+    height:180px;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.news-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+}
+.product-info{
+    max-width:900px;
+    margin:0 auto 35px;
+    text-align:left;
+    color:white;
+}
+
+.product-info p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.product-item{
+    background:rgba(255,255,255,.12);
+    padding:20px;
+    border-radius:15px;
+    backdrop-filter:blur(6px);
+}
+
+.product-item h4{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.product-item ul{
+    padding-left:20px;
+    line-height:1.9;
+}
+
+.product-item li{
+    margin-bottom:8px;
+}
 </style>
 </head>
 <body>
@@ -470,15 +547,19 @@ section{
     <div class="slider">
 
         <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=1400&q=80">
+            <img src="images/chau1.png">
         </div>
 
         <div class="slide">
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80">
+            <img src="images/chau2.png">
         </div>
 
         <div class="slide">
-            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80">
+            <img src="images/chau3.png">
+        </div>
+
+        <div class="slide">
+            <img src="images/chau4.png">
         </div>
 
         <button class="prev">&#10094;</button>
@@ -538,24 +619,23 @@ section{
 
 </section>
 
-<section class="counter">
+<section class="news">
 
-    <div class="counter-grid">
+    <h2 class="news-title">Báo chí nói gì về về đề rác thải?</h2>
 
-        <div>
-            <div class="number">5000+</div>
-            <p>Chậu đã bán</p>
-        </div>
+    <div class="news-grid">
 
-        <div>
-            <div class="number">2.1T</div>
-            <p>Nhựa tái chế</p>
-        </div>
+        <a href="https://tienphong.vn/moi-ngay-moi-truong-hung-chiu-60000-tan-rac-thai-sinh-hoat-post1618215.tpo" target="_blank" class="news-card">
+            <img src="images/news1.png" alt="Bài báo 1">
+        </a>
 
-        <div>
-            <div class="number">98%</div>
-            <p>Khách hàng hài lòng</p>
-        </div>
+        <a href="https://moitruongxaydungvn.vn/rac-thai-sinh-hoat-o-cac-thanh-pho-lon-dang-o-muc-bao-dong-thuc-trang-va-giai-phap-khac-phuc" target="_blank" class="news-card">
+            <img src="images/news2.png" alt="Bài báo 2">
+        </a>
+
+        <a href="https://www.sggp.org.vn/viet-nam-phat-sinh-khoang-253-trieu-tan-rac-thai-sinh-hoat-moi-nam-post820455.html" target="_blank" class="news-card">
+            <img src="images/news3.png" alt="Bài báo 3">
+        </a>
 
     </div>
 
@@ -567,14 +647,15 @@ section{
 
     <div class="gallery">
 
-        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80">
+        <img src="images/thuvienchau1.png">
+         
+        <img src="images/thuvienchau2.png">
 
-        <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&w=800&q=80">
+        <img src="images/thuvienchau3.png">
 
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80">
+        <img src="images/thuvienchau4.png">
 
-        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=80">
-
+        
     </div>
 
 </section>
@@ -587,10 +668,44 @@ section{
             Chung Tay Vì Một Hành Tinh Xanh 🌍
         </h2>
 
-        <p style="margin-bottom:30px">
-            Mỗi Green Loop được tạo ra là một bước tiến nhỏ
-            trong hành trình giảm rác thải nhựa.
-        </p>
+        <div class="product-info">
+
+    <p>
+        <strong>GreenLoop</strong> là chậu cây sinh học được sản xuất từ
+        <strong>50% bã cà phê</strong>, <strong>30% vỏ rau củ nghiền</strong>,
+        <strong>15% chất kết dính sinh học</strong> và
+        <strong>5% phụ gia tự nhiên</strong>.
+        Sản phẩm được thiết kế để thay thế chậu nhựa truyền thống, góp phần giảm
+        rác thải hữu cơ và xây dựng lối sống xanh bền vững.
+    </p>
+
+    <div class="product-grid">
+
+        <div class="product-item">
+            <h4>🌱 Chức năng</h4>
+            <ul>
+                <li>Trồng cây như chậu thông thường.</li>
+                <li>Tự phân hủy hoàn toàn sau 8–12 tháng.</li>
+                <li>Cung cấp dinh dưỡng tự nhiên cho cây.</li>
+                <li>Có thể chôn trực tiếp xuống đất, không cần tách cây khỏi chậu.</li>
+                <li>Hạn chế tổn thương bộ rễ khi trồng.</li>
+            </ul>
+        </div>
+
+        <div class="product-item">
+            <h4>📦 Thông số</h4>
+            <ul>
+                <li>Đường kính: 8–10 cm</li>
+                <li>Chiều cao: 8–12 cm</li>
+                <li>Hình trụ tròn, thiết kế tối giản.</li>
+                <li>Phù hợp cây ươm mầm, cây để bàn và cây cảnh mini.</li>
+                <li>Giá dự kiến: <strong>7.000 VNĐ/chậu</strong></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
 
        <a href="https://www.facebook.com/profile.php?id=61590244239722" class="btn">
     Đặt Hàng Ngay

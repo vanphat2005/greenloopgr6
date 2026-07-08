@@ -194,3 +194,41 @@ button:hover{
 .back-btn:hover{
     background: #1b5e20;
 }
+.news{
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.news-grid{
+    width: 75%;                 /* Thu nhỏ toàn bộ */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-grid{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-card{
+    width: 260px;      /* Điều chỉnh 220-300px tùy ý */
+    height: 150px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.news-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cắt bớt để vừa khung */
+    display: block;
+    transition: .3s;
+}
+
+.news-card:hover img{
+    transform: scale(1.05);
+}
