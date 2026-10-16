@@ -502,6 +502,143 @@ section{
 .product-item li{
     margin-bottom:8px;
 }
+
+/* PRODUCTS & COMBOS */
+
+.store-section{
+    background:#f4f8f4;
+    padding:90px 8%;
+}
+
+.store-title{
+    text-align:center;
+    color:#2e7d32;
+    font-size:38px;
+    margin-bottom:45px;
+}
+
+.store-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-bottom:75px;
+}
+
+.store-card{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 6px 22px rgba(0,0,0,.09);
+    transition:.3s;
+}
+
+.store-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
+
+.store-card-image{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+}
+
+.store-card-body{
+    padding:25px;
+    text-align:center;
+}
+
+.store-card-body h3{
+    color:#1b5e20;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.store-card-body p{
+    color:#666;
+    line-height:1.7;
+    min-height:82px;
+    margin-bottom:15px;
+}
+
+.store-price{
+    color:#2e7d32;
+    font-size:25px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.store-btn{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    padding:11px 28px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.store-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+.combo-heading{
+    text-align:center;
+    color:#2e7d32;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.combo-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.combo-card .store-card-image{
+    height:220px;
+}
+
+.combo-card .store-card-body{
+    padding:22px 18px;
+}
+
+.combo-card .store-card-body h3{
+    font-size:21px;
+}
+
+.combo-card .store-card-body p{
+    min-height:95px;
+    font-size:15px;
+}
+
+.combo-card .store-price{
+    font-size:22px;
+}
+
+@media(max-width:1000px){
+    .store-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .combo-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .store-section{
+        padding:70px 5%;
+    }
+
+    .store-grid,
+    .combo-grid{
+        grid-template-columns:1fr;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -656,6 +793,131 @@ section{
         <img src="images/thuvienchau4.png">
 
         
+    </div>
+
+</section>
+
+
+<section class="store-section">
+
+    <h2 class="store-title">Sản Phẩm Green Loop</h2>
+
+    <div class="store-grid">
+
+        <div class="store-card">
+            <img class="store-card-image" src="images/chauMVP.jpg" alt="Chậu cây tái chế">
+            <div class="store-card-body">
+                <h3>Chậu Cây Tái Chế</h3>
+                <p>
+                    Chậu cây sinh học GreenLoop được làm từ bã cà phê,
+                    vỏ rau củ nghiền và các thành phần tự nhiên.
+                    Thiết kế nhỏ gọn, phù hợp cho cây để bàn và cây mini.
+                </p>
+                <div class="store-price">8.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Hàng
+                </a>
+            </div>
+        </div>
+
+        <div class="store-card">
+            <img class="store-card-image" src="images/giadodienthoaiMVP.jpg" alt="Giá đỡ điện thoại">
+            <div class="store-card-body">
+                <h3>Giá Đỡ Điện Thoại</h3>
+                <p>
+                    Giá đỡ điện thoại handmade từ bã cà phê,
+                    chắc chắn, nhẹ và tiện dụng cho bàn học,
+                    bàn làm việc hoặc góc thư giãn.
+                </p>
+                <div class="store-price">20.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Hàng
+                </a>
+            </div>
+        </div>
+
+        <div class="store-card">
+            <img class="store-card-image" src="images/guongMVP.jpg" alt="Gương cầm tay">
+            <div class="store-card-body">
+                <h3>Gương Cầm Tay</h3>
+                <p>
+                    Gương cầm tay thiết kế nhỏ gọn, tiện dụng,
+                    phù hợp sử dụng hằng ngày và dễ dàng mang theo
+                    bên mình.
+                </p>
+                <div class="store-price">45.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Hàng
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="combo-heading">Combo Green Loop</h2>
+
+    <div class="combo-grid">
+
+        <div class="store-card combo-card">
+            <img class="store-card-image" src="images/COMBO1.jpg" alt="Combo 1">
+            <div class="store-card-body">
+                <h3>Combo Xanh Nhỏ</h3>
+                <p>
+                    1 Chậu Cây Tái Chế + 1 Giá Đỡ Điện Thoại.
+                    Phù hợp cho góc học tập và làm việc.
+                </p>
+                <div class="store-price">25.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Combo
+                </a>
+            </div>
+        </div>
+
+        <div class="store-card combo-card">
+            <img class="store-card-image" src="images/COMBO2.jpg" alt="Combo 2">
+            <div class="store-card-body">
+                <h3>Combo Góc Xanh</h3>
+                <p>
+                    1 Chậu Cây Tái Chế + 1 Gương Cầm Tay.
+                    Một lựa chọn nhỏ cho không gian sống xanh.
+                </p>
+                <div class="store-price">50.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Combo
+                </a>
+            </div>
+        </div>
+
+        <div class="store-card combo-card">
+            <img class="store-card-image" src="images/COMBO3.jpg" alt="Combo 3">
+            <div class="store-card-body">
+                <h3>Combo Sống Xanh</h3>
+                <p>
+                    1 Giá Đỡ Điện Thoại + 1 Gương Cầm Tay.
+                    Gọn nhẹ và tiện dụng cho cuộc sống hằng ngày.
+                </p>
+                <div class="store-price">59.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Combo
+                </a>
+            </div>
+        </div>
+
+        <div class="store-card combo-card">
+            <img class="store-card-image" src="images/COMBO4.jpg" alt="Combo 4">
+            <div class="store-card-body">
+                <h3>Combo Green Loop</h3>
+                <p>
+                    Bộ đầy đủ gồm Chậu Cây Tái Chế,
+                    Giá Đỡ Điện Thoại và Gương Cầm Tay.
+                </p>
+                <div class="store-price">69.000 VNĐ</div>
+                <a href="https://www.facebook.com/profile.php?id=61590244239722" class="store-btn">
+                    Đặt Combo
+                </a>
+            </div>
+        </div>
+
     </div>
 
 </section>

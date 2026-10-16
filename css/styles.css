@@ -232,3 +232,154 @@ button:hover{
 .news-card:hover img{
     transform: scale(1.05);
 }
+/* PRODUCTS */
+
+.products-section{
+    background:#f4f8f4;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-bottom:80px;
+}
+
+.product-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.product-card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:25px;
+    text-align:center;
+}
+
+.product-info h3{
+    color:#1b5e20;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.product-info p{
+    color:#666;
+    line-height:1.7;
+    min-height:80px;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#2e7d32;
+    font-size:25px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.order-btn{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    padding:12px 28px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#1b5e20;
+    transform:translateY(-3px);
+}
+
+/* COMBO */
+
+.combo-title{
+    text-align:center;
+    color:#2e7d32;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.combo-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.combo-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.combo-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.combo-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.combo-info{
+    padding:22px;
+    text-align:center;
+}
+
+.combo-info h3{
+    color:#1b5e20;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.combo-info p{
+    color:#666;
+    line-height:1.6;
+    min-height:75px;
+    margin-bottom:12px;
+}
+
+.combo-price{
+    color:#2e7d32;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+@media(max-width:1000px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .combo-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .products-grid,
+    .combo-grid{
+        grid-template-columns:1fr;
+    }
+
+}
